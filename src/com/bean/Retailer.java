@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class Retailer {
 
+    int id;
     String name;
     String Email;
     Long Phone1;
@@ -20,7 +21,7 @@ public class Retailer {
     int percentGoodsSale;
     LocalDate Creation;
 
-    public Retailer(String name, String email, Long phone1, Long phone2, String address1, String address2, int pIN,
+    public Retailer(int id, String name, String email, Long phone1, Long phone2, String address1, String address2, int pIN,
             String city, String state, int setTopBoxLimit, int creditLimit, int inventoryCost, int servicesCharge,
             int percentGoodsSale) {
         this.name = name;
@@ -40,6 +41,13 @@ public class Retailer {
         Creation = LocalDate.now();
     }
 
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getName() {
         return name;
     }
