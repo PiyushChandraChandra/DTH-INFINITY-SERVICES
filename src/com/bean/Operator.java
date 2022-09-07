@@ -3,7 +3,7 @@ package com.bean;
 import java.time.LocalDate;
 
 public class Operator {
-
+    int id;
     String FirstName;
     String LastName;
     String Email;
@@ -13,8 +13,9 @@ public class Operator {
     int maxCustomersManage;
     int ActiveCustomers;
     LocalDate Creation;    
-    public Operator(String firstName, String lastName, String email, Long phone, String startShift, String endShift,
+    public Operator(int id,String firstName, String lastName, String email, Long phone, String startShift, String endShift,
             int maxCustomersManage, int activeCustomers) {
+        this.id = id;
         FirstName = firstName;
         LastName = lastName;
         Email = email;
@@ -24,6 +25,12 @@ public class Operator {
         this.maxCustomersManage = maxCustomersManage;
         ActiveCustomers = activeCustomers;
         Creation = LocalDate.now();
+    }
+    public int getid(){
+        return id;
+    }
+    public void setid(int id){
+        this.id=id;
     }
     public String getFirstName() {
         return FirstName;
