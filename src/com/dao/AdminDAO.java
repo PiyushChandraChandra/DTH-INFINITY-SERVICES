@@ -48,7 +48,7 @@ public class AdminDAO {
 	
 	public int updateData(Connection connection,String name,String username,String password,int id) throws SQLException
 	{
-		String sql="update Employee set name=?,age=?,salary=? where id=?";
+		String sql="update Employee set name=?,username=?,password=? where id=?";
 		PreparedStatement ps=connection.prepareStatement(sql);
 		ps.setString(1,name);
 		ps.setInt(2,username);
