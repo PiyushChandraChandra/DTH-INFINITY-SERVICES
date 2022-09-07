@@ -2,7 +2,7 @@ package com.bean;
 
 import java.time.LocalTime;
 public class Customer {
-
+    int id;
     String FirstName;
     String LastName;
     String Email;
@@ -16,9 +16,10 @@ public class Customer {
     String State;
     String OperatorName;
     String RetailerName;
-    public Customer(String firstName, String lastName, String email, Long phone, String address1, String address2,
+    public Customer(int id,String firstName, String lastName, String email, Long phone, String address1, String address2,
             String landMark, int PIN, String city, String state, String operatorName,
             String retailerName) {
+        this.id=id;
         FirstName = firstName;
         LastName = lastName;
         Email = email;
@@ -32,6 +33,12 @@ public class Customer {
         State = state;
         OperatorName = operatorName;
         RetailerName = retailerName;
+    }
+    public int getid(){
+        return id;
+    }
+    public void setid(int id){
+        this.id=id;
     }
     public String getFirstName() {
         return FirstName;
