@@ -11,7 +11,7 @@ public class RetailerDAO {
 	
 	public void displayRecords(Connection connection) throws SQLException
 	{
-		String sql = "id, name, Email, age, Phone1, Phone2, Addredd1, Address2, PIN, city, State, SetTopBoxLimit, creditLimit, InventoryCost, ServicesCharge, percenGoodsSale, Creation from Retailer";
+		String sql = "select id, name, Email, age, Phone1, Phone2, Addredd1, Address2, PIN, city, State, SetTopBoxLimit, creditLimit, InventoryCost, ServicesCharge, percenGoodsSale, Creation from Retailer";
 		Statement stmpt = connection.createStatement();
 		
 		ResultSet resultObj = stmpt.executeQuery(sql);
@@ -23,23 +23,23 @@ public class RetailerDAO {
 			System.out.println(String.format("Email: %s", resultObj.getString("email")));
 			System.out.println(String.format("Phone1: %d", resultObj.getInt("phone1")));
 			System.out.println(String.format("Phone2: %d", resultObj.getInt("phone2")));
-			System.out.println(String.format("Address1: %d", resultObj.getInt("address1")));
-			System.out.println(String.format("Address2: %d", resultObj.getInt("address2")));
+			System.out.println(String.format("Address1: %d", resultObj.getString("address1")));
+			System.out.println(String.format("Address2: %d", resultObj.getString("address2")));
 			System.out.println(String.format("PIN: %d", resultObj.getInt("pin")));
-			System.out.println(String.format("City: %d", resultObj.getInt("city")));
-			System.out.println(String.format("State: %d", resultObj.getInt("state")));
+			System.out.println(String.format("City: %d", resultObj.getString("city")));
+			System.out.println(String.format("State: %d", resultObj.getString("state")));
 			System.out.println(String.format("SetTopBoxLimit: %d", resultObj.getInt("settopboxlimit")));
 			System.out.println(String.format("CreditLimit: %d", resultObj.getInt("creditlimit")));
 			System.out.println(String.format("InventoryCost: %d", resultObj.getInt("inventorycost")));
 			System.out.println(String.format("ServicesCharge: %d", resultObj.getInt("servicescharge")));
 			System.out.println(String.format("PercentGoodsSale: %d", resultObj.getInt("percentgoodssale")));
-			System.out.println(String.format("Creation: %d", resultObj.getInt("creation")));
+			System.out.println(String.format("Creation: %d", resultObj.getDate("creation")));
 		}
 	}
 	
 	public void createTable(Connection connection) throws SQLException
 	{
-		String sql = "create table Retailer (id number(8), name varchar(30), Email varchar(30), Phone1 number(12), Phone2 number(12), Address1 varchar(30), Address2 varchar(30), PIN number(8), city varchar(30), State varchar(30), SetTopBoxLimit number(5), creditLimit number(8), InventoryCost number(8), ServicesCharge number(8), percentGoodsSale number(8), Creation DATE";
+		String sql = "create table Retailer (id number(8), name varchar(30), email varchar(30), phone1 number(12), phone2 number(12), address1 varchar(30), address2 varchar(30), pin number(8), city varchar(30), state varchar(30), settopBoxLimit number(5), creditlimit number(8), inventoryCost number(8), servicescharge number(8), percentgoodssale number(8), Creation DATE";
 
 		Statement stmt = connection.createStatement();
 		
