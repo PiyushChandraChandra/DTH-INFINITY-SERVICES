@@ -1,7 +1,5 @@
 package com.bean;
 
-import java.time.LocalDate;
-
 public class Operator {
     int id;
     String FirstName;

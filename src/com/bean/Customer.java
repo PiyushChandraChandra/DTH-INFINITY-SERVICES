@@ -1,7 +1,5 @@
 package com.bean;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 public class Customer {
     int id;
     String FirstName;

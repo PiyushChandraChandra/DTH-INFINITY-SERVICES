@@ -2,7 +2,6 @@ package com.dao;
 
 import java.sql.*;
 import java.time.LocalDate;
-import java.util.*;
 
 import com.bean.Customer;
 
@@ -38,7 +37,7 @@ public class CustomerDAO {
 	
 	public void createTable(Connection connection) throws SQLException
 	{
-		String sql = "create table Customer (id int, firstName varchar(30), lastName varchar(30), email varchar(30), phone number, address1 varchar(30), address2 varchar(30), landMark varchar(30), PIN number, city varchar(30), state varchar(30), operatorName varchar(30), retailerName varchar(30))";
+		String sql = "create table Customer (id int, firstName varchar(30), lastName varchar(30), email varchar(30), phone int, address1 varchar(30), address2 varchar(30), landMark varchar(30), PIN int, city varchar(30), state varchar(30), operatorName varchar(30), retailerName varchar(30))";
 		Statement stmt = connection.createStatement();
 		
 		stmt.execute(sql);

@@ -1,7 +1,6 @@
 package com.dao;
 
 import java.sql.*;
-import java.util.*;
 
 import com.bean.Operator;
 
@@ -34,7 +33,7 @@ public class OperatorDAO {
 	
 	public void createTable(Connection connection) throws SQLException
 	{
-		String sql = "create table Operator (id number(10), FirstName varchar(30), LastName varchar(30), Email varchar(30), Phone number(12), StartShift varchar(30),EndShift varchar(30),maxCustomersManage number(10), ActiveCustomers number(10), Creation DATE)";
+		String sql = "create table Operator (id int, FirstName varchar(30), LastName varchar(30), Email varchar(30), Phone int, StartShift varchar(30),EndShift varchar(30),maxCustomersManage int, ActiveCustomers int, Creation DATE)";
 		Statement stmt = connection.createStatement();
 		
 		stmt.execute(sql);
