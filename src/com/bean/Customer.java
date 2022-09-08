@@ -1,7 +1,5 @@
 package com.bean;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 public class Customer {
     int id;
     String FirstName;
@@ -12,7 +10,7 @@ public class Customer {
     String Address2;
     String LandMark;
     int PIN;
-    LocalDate date;
+    String date;
     String city;
     String State;
     String OperatorName;
@@ -29,7 +27,7 @@ public class Customer {
         Address2 = address2;
         LandMark = landMark;
         this.PIN = PIN;
-        this.date = LocalDate.now();
+        this.date = "09/09/2022";
         this.city = city;
         State = state;
         OperatorName = operatorName;
@@ -89,11 +87,8 @@ public class Customer {
     public void setPIN(int pIN) {
         PIN = pIN;
     }
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
-    }
-    public void setDate() {
-        this.date = LocalDate.now();
     }
     public String getCity() {
         return city;

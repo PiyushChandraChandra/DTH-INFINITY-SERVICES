@@ -2,7 +2,6 @@ package com.dao;
 
 import java.sql.*;
 import java.time.LocalDate;
-import java.util.*;
 
 import com.bean.Customer;
 
@@ -57,7 +56,6 @@ public class CustomerDAO {
 		pstmt.setString(7, e.getAddress2());
 		pstmt.setString(8, e.getLandMark());
 		pstmt.setInt(9, e.getPIN());
-		pstmt.setDate(10, e.getDate());
 		pstmt.setString(11, e.getCity());
 		pstmt.setString(12, e.getState());
 		pstmt.setString(13, e.getOperatorName());
@@ -79,7 +77,6 @@ public class CustomerDAO {
 		ps.setString(1,address2);
 		ps.setString(1,landMark);
 		ps.setInt(1,pIN);
-		ps.setDate(1,date);
 		ps.setString(1,city);
 		ps.setString(1,state);
 		ps.setString(1,operatorName);

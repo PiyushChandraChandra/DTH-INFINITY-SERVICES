@@ -1,7 +1,5 @@
 package com.bean;
 
-import java.time.LocalDate;
-
 public class Operator {
     int id;
     String FirstName;
@@ -12,7 +10,7 @@ public class Operator {
     String EndShift;
     int maxCustomersManage;
     int ActiveCustomers;
-    LocalDate Creation;    
+    String Creation;    
     public Operator(int id,String firstName, String lastName, String email, Long phone, String startShift, String endShift,
             int maxCustomersManage, int activeCustomers) {
         this.id = id;
@@ -24,7 +22,7 @@ public class Operator {
         EndShift = endShift;
         this.maxCustomersManage = maxCustomersManage;
         ActiveCustomers = activeCustomers;
-        Creation = LocalDate.now();
+        Creation = "09/09/2022";
     }
     public int getid(){
         return id;
@@ -80,10 +78,7 @@ public class Operator {
     public void setActiveCustomers(int activeCustomers) {
         ActiveCustomers = activeCustomers;
     }
-    public LocalDate getCreation() {
+    public String getCreation() {
         return Creation;
-    }
-    public void setCreation() {
-        Creation = LocalDate.now();
     }
 }

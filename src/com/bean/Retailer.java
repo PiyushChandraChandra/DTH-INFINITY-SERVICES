@@ -1,7 +1,5 @@
 package com.bean;
 
-import java.time.LocalDate;
-
 public class Retailer {
 
     int id;
@@ -19,7 +17,7 @@ public class Retailer {
     int InventoryCost;
     int ServicesCharge;
     int percentGoodsSale;
-    LocalDate Creation;
+    String Creation;
 
     public Retailer(int id, String name, String email, Long phone1, Long phone2, String address1, String address2, int pIN,
             String city, String state, int setTopBoxLimit, int creditLimit, int inventoryCost, int servicesCharge,
@@ -38,7 +36,7 @@ public class Retailer {
         InventoryCost = inventoryCost;
         ServicesCharge = servicesCharge;
         this.percentGoodsSale = percentGoodsSale;
-        Creation = LocalDate.now();
+        Creation = "09/09/2022";
     }
 
     public int getId() {
@@ -160,12 +158,7 @@ public class Retailer {
         this.percentGoodsSale = percentGoodsSale;
     }
 
-    public LocalDate getCreation() {
+    public String getCreation() {
         return Creation;
     }
-
-    public void setCreation() {
-        Creation = LocalDate.now();
-    }
-    
 }

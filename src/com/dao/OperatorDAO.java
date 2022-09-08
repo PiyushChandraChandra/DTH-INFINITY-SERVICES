@@ -1,7 +1,6 @@
 package com.dao;
 
 import java.sql.*;
-import java.util.*;
 
 import com.bean.Operator;
 
@@ -53,14 +52,13 @@ public class OperatorDAO {
 		pstmt.setString(4, e.getEndShift());
 		pstmt.setInt(4, e.getMaxCustomersManage());
 		pstmt.setInt(4, e.getActiveCustomers());
-		pstmt.setDate(4, e.getCreation());
 		
 		
 		int rows=pstmt.executeUpdate();
 		return rows;
 	}
 	
-	public int updateData(Connection connection,String FirstName,String LastName,String Email, Long Phone, String StartShift, String EndShift, int maxCustomersManage, int ActiveCustomers, LocalDate Creation) throws SQLException
+	public int updateData(Connection connection,String FirstName,String LastName,String Email, Long Phone, String StartShift, String EndShift, int maxCustomersManage, int ActiveCustomers, String Creation) throws SQLException
 	{
 		String sql="update Operator set FirstName=?,LastName=?,Email=?, Phone=?, StartShift=?, EndShift=?, maxCustomersManage=?, ActiveCustomers=?, Creation=? where id=?";
 		PreparedStatement ps=connection.prepareStatement(sql);
@@ -72,7 +70,6 @@ public class OperatorDAO {
 		ps.setString(6, EndShift);
 		ps.setInt(7, maxCustomersManage);
 		ps.setInt(8, ActiveCustomers);
-		ps.setDate(9, Creation);
 		
 		int updated=ps.executeUpdate();
 		return updated;

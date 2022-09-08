@@ -13,7 +13,7 @@ public class MasterTester {
 	public static void main(String[] args) throws SQLException {
 		// TODO Auto-generated method stub
 		
-		String jdbcURL = "jdbc:derby:testdb2;create=true";
+		String jdbcURL = "jdbc:derby:testdb;create=true";
 		Connection connection = null;
 		connection = DriverManager.getConnection(jdbcURL);
 		System.out.println("The connection is established");
@@ -30,7 +30,7 @@ public class MasterTester {
 		String user = sc.nextLine();
 		System.out.println("password: ");
 		String pass = sc.nextLine();
-		ResultSet rs = displayRecords(connection);
+		ResultSet rs = dao.displayRecords(connection);
 		boolean auth = false;
 		while(rs.next()){
 			if((user.equalsIgnoreCase(rs.getString("username"))) && (pass.equals(rs.getString("password")))){
@@ -49,6 +49,8 @@ public class MasterTester {
 					case 1:
 					System.out.println("Chose the action you want to perform on customers data:");
 					System.out.println("1. Add\n2. Update\n3. Delete\n4. Display");
+					int cust= sc.nextInt();
+					
 					break;
 					case 2:
 					System.out.println("Chose the action you want to perform on operator data:");
@@ -65,20 +67,18 @@ public class MasterTester {
 					default:
 					System.out.println("Invalid Entry");
 					break;
-						
-					System.out.println("Do you want to continue(Y/N)");
-					char exit = sc.next();
-					if(exit=='Y'){
-						break;
-					}		
 			}
+				System.out.println("Do you want to continue(Y/N)");
+				String exit = sc.next();
+				if(exit=="Y"){
+					break;
+				}	
+		}
 		}
 		else{
 			System.out.println("Access denied");
 		}
 		
 		connection.close();
-
-	}
-
+ }
 }

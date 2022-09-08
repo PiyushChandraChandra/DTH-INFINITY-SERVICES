@@ -1,7 +1,6 @@
 package com.dao;
 
 import java.sql.*;
-import java.util.*;
 
 import com.bean.Retailer;
 
@@ -66,7 +65,6 @@ public class RetailerDAO {
 		pstmt.setInt(13, e.getInventoryCost());
 		pstmt.setInt(14, e.getServicesCharge());
 		pstmt.setInt(15, e.getPercentGoodsSale());
-		pstmt.setDate(16, e.getCreation());
 		
 		int rows=pstmt.executeUpdate();
 		return rows;
@@ -74,7 +72,7 @@ public class RetailerDAO {
 	
 	public int updateData(Connection connection, String name, String Email, Long Phone1, Long Phone2, String Address1,
 			String Address2, int PIN, String city, String State, int SetTopBoxLimit, int creditLimit, int InventoryCost,
-			int ServicesCharge, int percentGoodsSale, LocalDate Creation, int id) throws SQLException {
+			int ServicesCharge, int percentGoodsSale, String Creation, int id) throws SQLException {
 		String sql = "update Retailer set name=?,Email=?,Phone1=?,Phone2=?,Address1=?,Address2=?,PIN=?,city=?,State=?,"
 				+ "SetTopBoxLimit=?,creditLimit=?,InventoryCost=?,ServicesCharge=?,percentGoodsSale,Creation=? where id=?";
 		java.sql.PreparedStatement ps = connection.prepareStatement(sql);
@@ -92,7 +90,6 @@ public class RetailerDAO {
 		ps.setInt(12, InventoryCost);
 		ps.setInt(13, ServicesCharge);
 		ps.setInt(14, percentGoodsSale);
-		ps.setDate(15, Creation);
 		ps.setInt(16, id);
 		
 		int updated = ps.executeUpdate();
