@@ -9,20 +9,14 @@ public class AdminDAO {
 	
 
 	
-	public void displayRecords(Connection connection) throws SQLException
+	public ResultSet displayRecords(Connection connection) throws SQLException
 	{
 		String sql = "select id, name, username, password from Admin";
 		Statement stmpt = connection.createStatement();
 		
 		ResultSet resultObj = stmpt.executeQuery(sql);
 		
-		while(resultObj.next())
-		{
-			System.out.println(String.format("ID: %d", resultObj.getInt("id")));
-			System.out.println(String.format("Name: %s", resultObj.getString("name")));
-			System.out.println(String.format("Username: %d", resultObj.getString("username")));
-			System.out.println(String.format("Password: %d", resultObj.getString("password")));
-		}
+		return resultObj;
 	}
 	
 	public void createTable(Connection connection) throws SQLException
