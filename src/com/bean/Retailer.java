@@ -1,5 +1,7 @@
 package com.bean;
 
+import java.time.LocalDate;
+
 public class Retailer {
 
     int id;

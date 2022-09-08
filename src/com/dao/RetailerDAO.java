@@ -1,6 +1,7 @@
 package com.dao;
 
 import java.sql.*;
+import java.util.*;
 
 import com.bean.Retailer;
 
@@ -38,7 +39,7 @@ public class RetailerDAO {
 	
 	public void createTable(Connection connection) throws SQLException
 	{
-		String sql = "create table Retailer (id int, name varchar(30), Email varchar(30), Phone1 varchar(30), Phone2 varchar(30), Address1 varchar(30), Address2 varchar(30), PIN int, city varchar(30), State varchar(30), SetTopBoxLimit int, creditLimit int, InventoryCost int, ServicesCharge int, percentGoodsSale int, Creation DATE)";
+		String sql = "create table Retailer (id number(8), name varchar(30), Email varchar(30), Phone1 number(12), Phone2 number(12), Address1 varchar(30), Address2 varchar(30), PIN number(8), city varchar(30), State varchar(30), SetTopBoxLimit number(5), creditLimit number(8), InventoryCost number(8), ServicesCharge number(8), percentGoodsSale number(8), Creation DATE";
 
 		Statement stmt = connection.createStatement();
 		
