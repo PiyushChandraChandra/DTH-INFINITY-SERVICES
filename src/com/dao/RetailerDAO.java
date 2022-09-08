@@ -41,18 +41,18 @@ public class RetailerDAO {
 		pstmt.setString(2, e.getName());
 		pstmt.setString(3, e.getEmail());
 		pstmt.setLong(4, e.getPhone1());
-		pstmt.setLong(4, e.getPhone2());
-		pstmt.setString(4, e.getAddress1());
-		pstmt.setString(4, e.getAddress2());
-		pstmt.setInt(4, e.getPIN());
-		pstmt.setString(4, e.getCity());
-		pstmt.setString(4, e.getState());
-		pstmt.setInt(4, e.getSetTopBoxLimit());
-		pstmt.setInt(4, e.getCreditLimit());
-		pstmt.setInt(4, e.getInventoryCost());
-		pstmt.setInt(4, e.getServicesCharge());
-		pstmt.setInt(4, e.getPercentGoodsSale());
-		pstmt.setDate(4, e.getCreation());
+		pstmt.setLong(5, e.getPhone2());
+		pstmt.setString(6, e.getAddress1());
+		pstmt.setString(7, e.getAddress2());
+		pstmt.setInt(8, e.getPIN());
+		pstmt.setString(9, e.getCity());
+		pstmt.setString(10, e.getState());
+		pstmt.setInt(11, e.getSetTopBoxLimit());
+		pstmt.setInt(12, e.getCreditLimit());
+		pstmt.setInt(13, e.getInventoryCost());
+		pstmt.setInt(14, e.getServicesCharge());
+		pstmt.setInt(15, e.getPercentGoodsSale());
+		pstmt.setDate(16, e.getCreation());
 		
 		
 		
