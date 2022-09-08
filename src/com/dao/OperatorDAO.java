@@ -22,7 +22,7 @@ public class OperatorDAO {
 			System.out.println(String.format("FirstName: %s", resultObj.getString("FirstName")));
 			System.out.println(String.format("LastName: %s", resultObj.getString("LastName")));
 			System.out.println(String.format("Email: %s", resultObj.getString("Email")));
-			System.out.println(String.format("Phone: %Id", resultObj.getInt("Phone")));
+			System.out.println(String.format("Phone: %d", resultObj.getInt("Phone")));
 			System.out.println(String.format("StartShift: %s", resultObj.getString("StartShift")));
 			System.out.println(String.format("EndShift: %s", resultObj.getString("EndShift")));
 			System.out.println(String.format("maxCustomersManage: %d", resultObj.getInt("maxCustomersManage")));
@@ -34,7 +34,7 @@ public class OperatorDAO {
 	
 	public void createTable(Connection connection) throws SQLException
 	{
-		String sql = "create table Operator (id number(10), FirstName varchar(30), LastName varchar(30), Email varchar(30), Phone varchar2(10), StartShift varchar(30),EndShift varchar(30),maxCustomersManage number(10), ActiveCustomers number(10), Creation  )";
+		String sql = "create table Operator (id number(10), FirstName varchar(30), LastName varchar(30), Email varchar(30), Phone number(12), StartShift varchar(30),EndShift varchar(30),maxCustomersManage number(10), ActiveCustomers number(10), Creation DATE)";
 		Statement stmt = connection.createStatement();
 		
 		stmt.execute(sql);
@@ -42,7 +42,7 @@ public class OperatorDAO {
 	
 	public int insertData(Connection connection, Operator e) throws SQLException
 	{
-		String sql = "insert into Operator (id, FirstName, LastName, Email, Phone, StartShift, EndShift, maxCustomersManage, ActiveCustomers, Creation ) values (?,?,?,?)";
+		String sql = "insert into Operator (id, FirstName, LastName, Email, Phone, StartShift, EndShift, maxCustomersManage, ActiveCustomers, Creation ) values (?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement pstmt = connection.prepareStatement(sql);
 		pstmt.setInt(1, e.getId());
 		pstmt.setString(2, e.getFirstName());
@@ -74,12 +74,8 @@ public class OperatorDAO {
 		ps.setInt(8, ActiveCustomers);
 		ps.setDate(9, Creation);
 		
-		
-		
 		int updated=ps.executeUpdate();
 		return updated;
-		
-		
 	}
 	
 	public void deleteData(Connection connection, int id) throws SQLException
