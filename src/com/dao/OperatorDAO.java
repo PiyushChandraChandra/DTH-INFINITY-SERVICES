@@ -44,15 +44,15 @@ public class OperatorDAO {
 	{
 		String sql = "insert into Operator (id, FirstName, LastName, Email, Phone, StartShift, EndShift, maxCustomersManage, ActiveCustomers, Creation ) values (?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement pstmt = connection.prepareStatement(sql);
-		pstmt.setInt(1, e.getId());
+		pstmt.setInt(1, e.getid());
 		pstmt.setString(2, e.getFirstName());
 		pstmt.setString(3, e.getLastName());
 		pstmt.setString(4, e.getEmail());
 		pstmt.setLong(4, e.getPhone());
 		pstmt.setString(4, e.getStartShift());
 		pstmt.setString(4, e.getEndShift());
-		pstmt.setInt(4, e.getmaxCustomersManage());
-		pstmt.setInt(4, e.ActiveCustomers());
+		pstmt.setInt(4, e.getMaxCustomersManage());
+		pstmt.setInt(4, e.getActiveCustomers());
 		pstmt.setDate(4, e.getCreation());
 		
 		

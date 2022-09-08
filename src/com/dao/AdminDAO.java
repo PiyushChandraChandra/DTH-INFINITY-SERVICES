@@ -20,8 +20,8 @@ public class AdminDAO {
 		{
 			System.out.println(String.format("ID: %d", resultObj.getInt("id")));
 			System.out.println(String.format("Name: %s", resultObj.getString("name")));
-			System.out.println(String.format("Username: %d", resultObj.getInt("username")));
-			System.out.println(String.format("Password: %d", resultObj.getInt("password")));
+			System.out.println(String.format("Username: %d", resultObj.getString("username")));
+			System.out.println(String.format("Password: %d", resultObj.getString("password")));
 		}
 	}
 	
@@ -39,8 +39,8 @@ public class AdminDAO {
 		PreparedStatement pstmt = connection.prepareStatement(sql);
 		pstmt.setInt(1, e.getId());
 		pstmt.setString(2, e.getName());
-		pstmt.setInt(3, e.getUsername());
-		pstmt.setInt(4, e.getPassword());
+		pstmt.setString(3, e.getUsername());
+		pstmt.setString(4, e.getPassword());
 		
 		int rows=pstmt.executeUpdate();
 		return rows;
@@ -51,8 +51,8 @@ public class AdminDAO {
 		String sql="update Employee set name=?,username=?,password=? where id=?";
 		PreparedStatement ps=connection.prepareStatement(sql);
 		ps.setString(1,name);
-		ps.setInt(2,username);
-		ps.setInt(3, password);
+		ps.setString(2,username);
+		ps.setString(3, password);
 		int updated=ps.executeUpdate();
 		return updated;
 		

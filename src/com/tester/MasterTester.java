@@ -40,10 +40,11 @@ public class MasterTester {
 					System.out.print("\nEnter your Name: ");
 					String name = sc.nextLine();
 					System.out.print("\nEnter your Age: ");
-					int age = Integer.parseInt(sc.nextLine());
-					System.out.print("\nEnter your Salary: ");
-					int salary = Integer.parseInt(sc.nextLine());
-					Admin e1=new Admin(id,name,age,salary);
+					String username = sc.nextLine();
+					System.out.print("\nEnter your Username: ");
+					String password = sc.nextLine();
+					System.out.print("\nEnter your Password: ");
+					Admin e1=new Admin(id,name,username,password);
 					System.out.println(dao.insertData(connection,e1));
 				break;
 				

@@ -1,6 +1,7 @@
 package com.dao;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.*;
 
 import com.bean.Customer;
@@ -47,7 +48,7 @@ public class CustomerDAO {
 	{
 		String sql = "insert into Customer (id, firstName, lastName, email, phone, address1, address2, landMark, PIN, city, state, operatorName, retailerName) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement pstmt = connection.prepareStatement(sql);
-		pstmt.setInt(1, e.getId());
+		pstmt.setInt(1, e.getid());
 		pstmt.setString(2, e.getFirstName());
 		pstmt.setString(3, e.getLastName());
 		pstmt.setString(4, e.getEmail());
@@ -56,7 +57,7 @@ public class CustomerDAO {
 		pstmt.setString(7, e.getAddress2());
 		pstmt.setString(8, e.getLandMark());
 		pstmt.setInt(9, e.getPIN());
-		pstmt.setLocalDate(10, e.getDate());
+		pstmt.setDate(10, e.getDate());
 		pstmt.setString(11, e.getCity());
 		pstmt.setString(12, e.getState());
 		pstmt.setString(13, e.getOperatorName());
@@ -66,11 +67,11 @@ public class CustomerDAO {
 		return rows;
 	}
 	
-	public int updateData(Connection connection,String firstname,String lastname, String email,String phone,LocalTime starttime,int noOfCustomers,int id) throws SQLException
+	public int updateData(Connection connection,String firstname,String lastname, String email,long phone,String address1, String address2, String landMark, int pIN, LocalDate date, String city, String state, String operatorName, String retailerName, int id) throws SQLException
 	{
 		String sql="update Customer set firstName=?, lastName=?, email=?, phone=?, address1=?, address2=?, landMark=?, PIN=?, date=?, city=?, state=?, operatorName=?, retailerName=? where id=?";
 		PreparedStatement ps=connection.prepareStatement(sql);
-		ps.setString(1,firstName);
+		ps.setString(1,firstname);
 		ps.setString(1,lastname);
 		ps.setString(1,email);
 		ps.setLong(1,phone);
