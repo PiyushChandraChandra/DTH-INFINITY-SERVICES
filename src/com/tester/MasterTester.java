@@ -20,6 +20,12 @@ public class MasterTester {
 		
 		AdminDAO dao=new AdminDAO();
 		dao.createTable(connection);
+		CustomerDAO cdao = new CustomerDAO();
+		cdao.createTable(connection);
+		OperatorDAO odao = new OperatorDAO();
+		odao.createTable(connection);
+		RetailerDAO rdao = new RetailerDAO();
+		rdao.createTable(connection);
 		Admin df = new Admin(101,"default","default101","12345");
 		int a=dao.insertData(connection,df);
 		if(a==1){
@@ -50,19 +56,89 @@ public class MasterTester {
 					System.out.println("Chose the action you want to perform on customers data:");
 					System.out.println("1. Add\n2. Update\n3. Delete\n4. Display");
 					int cust= sc.nextInt();
-					
+					switch(cust){
+						case 1:
+						//add
+						break;
+						case 2:
+						//update
+						break;
+						case 3:
+						//Delete
+						break;
+						case 4:
+						//Display
+						break;
+						default:
+						System.out.println("Invalid entry");
+						break
+					}
 					break;
 					case 2:
 					System.out.println("Chose the action you want to perform on operator data:");
 					System.out.println("1. Add\n2. Update\n3. Delete\n4. Display");
+					int op= sc.nextInt();
+					switch(op){
+						case 1:
+						//add
+						break;
+						case 2:
+						//update
+						break;
+						case 3:
+						//Delete
+						break;
+						case 4:
+						//Display
+						break;
+						default:
+						System.out.println("Invalid entry");
+						break
+					}
 					break;
 					case 3:
 					System.out.println("Chose the action you want to perform on retailer data:");
 					System.out.println("1. Add\n2. Update\n3. Delete\n4. Display");
+					int rt= sc.nextInt();
+					switch(rt){
+						case 1:
+						//add
+						break;
+						case 2:
+						//update
+						break;
+						case 3:
+						//Delete
+						break;
+						case 4:
+						//Display
+						break;
+						default:
+						System.out.println("Invalid entry");
+						break
+					}
 					break;
 					case 4:
 					System.out.println("Chose the action you want to perform on admin data:");
 					System.out.println("1. Add\n2. Update\n3. Delete\n4. Display");
+					int ad= sc.nextInt();
+					switch(ad){
+						case 1:
+						//add
+						break;
+						case 2:
+						//update
+						break;
+						case 3:
+						//Delete
+						break;
+						case 4:
+						//Display
+						break;
+						default:
+						System.out.println("Invalid entry");
+						break
+					}
 					break;
 					default:
 					System.out.println("Invalid Entry");
