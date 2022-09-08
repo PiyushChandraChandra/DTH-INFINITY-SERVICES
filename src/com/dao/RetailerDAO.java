@@ -48,24 +48,25 @@ public class RetailerDAO {
 	
 	public int insertData(Connection connection, Retailer e) throws SQLException
 	{
-		String sql = "insert into Retailer (id, name, age, salary) values (?,?,?,?)";
+
+		String sql = "insert into Retailer (id, name, Email, Phone1,Phone2,Address1,Address2,PIN,city,State,SetTopBoxLimit,creditLimit,InventoryCost,ServicesCharge,personGoodsSale,Creation) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement pstmt = connection.prepareStatement(sql);
 		pstmt.setInt(1, e.getId());
 		pstmt.setString(2, e.getName());
-		pstmt.setInt(3, e.getEmail());
-		pstmt.setInt(4, e.getPhone1());
-		pstmt.setInt(5, e.getPhone2());
-		pstmt.setInt(6, e.getAddress1());
-		pstmt.setInt(7, e.getAddress2());
-		pstmt.setInt(8, e.getPIn());
-		pstmt.setInt(9, e.getCity());
-		pstmt.setInt(10, e.getState());
+		pstmt.setString(3, e.getEmail());
+		pstmt.setLong(4, e.getPhone1());
+		pstmt.setLong(5, e.getPhone2());
+		pstmt.setString(6, e.getAddress1());
+		pstmt.setString(7, e.getAddress2());
+		pstmt.setInt(8, e.getPIN());
+		pstmt.setString(9, e.getCity());
+		pstmt.setString(10, e.getState());
 		pstmt.setInt(11, e.getSetTopBoxLimit());
 		pstmt.setInt(12, e.getCreditLimit());
 		pstmt.setInt(13, e.getInventoryCost());
 		pstmt.setInt(14, e.getServicesCharge());
 		pstmt.setInt(15, e.getPercentGoodsSale());
-		pstmt.setInt(16, e.getCreation());
+		pstmt.setDate(16, e.getCreation());
 		
 		int rows=pstmt.executeUpdate();
 		return rows;
