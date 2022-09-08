@@ -11,7 +11,7 @@ public class OperatorDAO {
 	
 	public void displayRecords(Connection connection) throws SQLException
 	{
-		String sql = "select id, FirstName, LastName, Email,Phone from Operator";
+		String sql = "select id, FirstName, LastName, Email, Phone, StartShift, EndShift, maxCustomersManage, ActiveCustomers, Creation from Operator";
 		Statement stmpt = connection.createStatement();
 		
 		ResultSet resultObj = stmpt.executeQuery(sql);
@@ -28,9 +28,6 @@ public class OperatorDAO {
 			System.out.println(String.format("maxCustomersManage: %d", resultObj.getInt("maxCustomersManage")));
 			System.out.println(String.format("ActiveCustomers: %d", resultObj.getInt("ActiveCustomers")));
 			System.out.println(String.format("Creation: %d", resultObj.getDate("Creation")));
-			
-			
-			
 			
 		}
 	}
