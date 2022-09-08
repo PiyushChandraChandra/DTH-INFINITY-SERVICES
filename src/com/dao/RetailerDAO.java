@@ -35,12 +35,26 @@ public class RetailerDAO {
 	
 	public int insertData(Connection connection, Retailer e) throws SQLException
 	{
-		String sql = "insert into Employee (id, name, age, salary) values (?,?,?,?)";
+		String sql = "insert into Retailer (id, name, Email, Phone1,Phone2,Address1,Address2,PIN,city,State,SetTopBoxLimit,creditLimit,InventoryCost,ServicesCharge,personGoodsSale,Creation) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement pstmt = connection.prepareStatement(sql);
 		pstmt.setInt(1, e.getId());
 		pstmt.setString(2, e.getName());
-		pstmt.setInt(3, e.getAge());
-		pstmt.setInt(4, e.getSalary());
+		pstmt.setString(3, e.getEmail());
+		pstmt.setLong(4, e.getPhone1());
+		pstmt.setLong(4, e.getPhone2());
+		pstmt.setString(4, e.getAddress1());
+		pstmt.setString(4, e.getAddress2());
+		pstmt.setInt(4, e.getPIN());
+		pstmt.setString(4, e.getCity());
+		pstmt.setString(4, e.getState());
+		pstmt.setInt(4, e.getSetTopBoxLimit());
+		pstmt.setInt(4, e.getCreditLimit());
+		pstmt.setInt(4, e.getInventoryCost());
+		pstmt.setInt(4, e.getServicesCharge());
+		pstmt.setInt(4, e.getPercentGoodsSale());
+		pstmt.setDate(4, e.getCreation());
+		
+		
 		
 		int rows=pstmt.executeUpdate();
 		return rows;
