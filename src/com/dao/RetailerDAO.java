@@ -62,7 +62,7 @@ public class RetailerDAO {
 	
 	public void deleteData(Connection connection, int id) throws SQLException
 	{
-		String sql = "delete from Employee where id = ?";
+		String sql = "delete from Retailer where id = ?";
 		PreparedStatement pstmt = connection.prepareStatement(sql);
 		pstmt.setInt(1, id);
 		pstmt.execute();
